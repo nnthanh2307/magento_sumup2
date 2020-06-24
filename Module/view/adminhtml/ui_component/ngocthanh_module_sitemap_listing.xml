@@ -1,0 +1,92 @@
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">ngocthanh_module_sitemap_listing.ngocthanh_module_sitemap_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="add">
+                <url path="*/*/new"/>
+                <class>primary</class>
+                <label translate="true">Add New Blog</label>
+            </button>
+        </buttons>
+        <spinner>sitemap</spinner>
+        <deps>
+            <dep>ngocthanh_module_sitemap_listing.ngocthanh_module_sitemap_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="ngocthanh_module_sitemap_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">sitemap_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <dataProvider class="NgocThanh\Module\Ui\Component\DataProvider" name="ngocthanh_module_sitemap_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>sitemap_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+
+<!--    <listingToolbar name="listing_top">-->
+<!--        <settings>-->
+<!--            <sticky>true</sticky>-->
+<!--        </settings>-->
+<!--        <bookmark name="bookmarks"/>-->
+<!--        <columnsControls name="columns_controls"/>-->
+<!--        <filterSearch name="fulltext"/>-->
+<!--        <filters name="listing_filters">-->
+
+<!--        </filters>-->
+<!--        <massaction name="listing_massaction">-->
+
+<!--        </massaction>-->
+<!--        <paging name="listing_paging"/>-->
+<!--    </listingToolbar>-->
+
+    <columns name="sitemap">
+        <selectionsColumn name="sitemap_id">
+            <settings>
+                <indexField>sitemap_id</indexField>
+                <resizeEnabled>false</resizeEnabled>
+                <resizeDefaultWidth>55</resizeDefaultWidth>
+            </settings>
+        </selectionsColumn>
+        <column name="sitemap_id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">SiteMap ID</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="sitemap_type">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">SiteMap Type</label>
+            </settings>
+        </column>
+        <column name="sitemap_path">
+            <settings>
+                <filter>text</filter>
+                <editor>
+                    <validation>
+                        <rule name="validate-identifier" xsi:type="boolean">true</rule>
+                    </validation>
+                    <editorType>text</editorType>
+                </editor>
+                <label translate="true">SiteMap Path</label>
+            </settings>
+        </column>
+        <column name="sitemap_time">
+            <settings>
+                <filter>select</filter>
+                <label translate="true">SiteMap Time</label>
+            </settings>
+        </column>
+
+    </columns>
+</listing>

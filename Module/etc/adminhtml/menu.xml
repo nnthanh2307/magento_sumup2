@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+<!--    <menu>-->
+<!--        <add id="NgocThanh_Module::module" title="New Module" module="NgocThanh_Module" sortOrder="51" resource="NgocThanh_Module::module"/>-->
+<!--        <add id="NgocThanh_Module::create" title="Action" module="NgocThanh_Module" sortOrder="10" action="module/index/index" resource="Vendor_MyModule::create" parent="NgocThanh_Module::module"/>-->
+<!--        <add id="NgocThanh_Module::delete" title="Form" module="NgocThanh_Module" sortOrder="10" action="module/index/form" resource="Vendor_MyModule::delete" parent="NgocThanh_Module::module"/>-->
+<!--    </menu>-->
+</config>
